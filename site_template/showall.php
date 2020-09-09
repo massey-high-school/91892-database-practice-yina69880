@@ -1,5 +1,8 @@
     <?php include("topbit.php");
-    $find_sql = "SELECT * FROM `L2_Prac_game_details`";
+    $find_sql = "SELECT * FROM `L2_Prac_game_details`
+    JOIN L2_Prac_genre ON (L2_Prac_game_details.GenreID = L2_Prac_genre.GenreID)
+    
+    ";
     $find_query = mysqli_query($dbconnect, $find_sql);
     $find_rs = mysqli_fetch_assoc($find_query);
     $count = mysqli_num_rows($find_query);
@@ -28,17 +31,26 @@
             else {
                 do
                 {
+                    
                     ?>
+            
             <!-- Results go here -->
             <div class="results">
-                <?php echo $find_rs[]; ?>
-            </div> <!-- / results -->
+                <span class="sub_heading">
+                    <a href="<?php echo $find_rs['URL']; ?>">
+                        <?php echo $find_rs['Name']; ?>
+                    </a>
+                </span>
             
             <br />
             
+                <?php echo $find_rs['GenreID'] ?>
+                <?php echo $find_rs['Genre'] ?>
+
+            </div> <!-- / results -->
             
-            <?php
-                    
+            <br />
+                   <?php 
                 }  // end results 'do'
                 
                 while 

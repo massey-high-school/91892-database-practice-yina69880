@@ -101,7 +101,7 @@ h1, h2, h3, h4 {
 
 .sub_heading {
     font-family: 'Ubuntu', sans-serif;
-    color: #593849;
+    color: #083511;
     font-weight: bold;
 }
 
@@ -109,9 +109,9 @@ h1, h2, h3, h4 {
 
 /* links in page */
 
-a:link{color: #d6d3d6;}
-a:visited{color: #5a6300;}
-a:hover{color: #8c5701;}
+a:link{color: #083511;}
+a:visited{color: #8a1b1b;}
+a:hover{color: #3b5e1f;}
 
 /* side links */
 a.side {
