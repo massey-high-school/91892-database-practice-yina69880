@@ -1,4 +1,4 @@
-Importing Hints
+mporting Hints
 1. Check .csv for extra lines!!
 2. If you have Boolean values, 0 is False, 1 is True
 3. Check # of columns
