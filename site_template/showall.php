@@ -35,30 +35,89 @@
             
             <!-- Results go here -->
             <div class="results">
-                <span class="sub_heading">
-                    <a href="<?php echo $find_rs['URL']; ?>">
-                        <?php echo $find_rs['Name']; ?>
-                    </a>
-                </span>
-            <br />
                 
-            <p>
+                <!-- Heading and subtitles -->
+                
+                <div class ="flex-container">
+                    <div>               
+                        <span class="sub_heading">
+                            <a href="<?php echo $find_rs['URL']; ?>">
+                                <?php echo $find_rs['Name']; ?>
+                            </a>
+                        </span> 
+                    </div> <!-- / Title -->
+                    
+                    <?php
+                        if($find_rs['Subtitle'] != "") 
+                        
+                        {
+                        ?>
+                    <div>
+                        
+                        &nbsp; &nbsp; | &nbsp; &nbsp;
+                        
+                        <?php echo $find_rs['Subtitle']; ?>
+                        
+                    </div> <!-- / subtitle -->
+                    
+                    <?php
+                        }
+                    ?>
+                
+                </div> 
+                <!-- / Heading ans subtitles -->
+                
+                <!-- Ratings Area -->
+                
+                <div class="flex-container">
+                    
+                    <!-- Partial Satrs Original Source:
+                    https://codepen.io/Bluetidepro/pen/GkpEa -->
+                    <div class="star-ratings-sprite">
+                
+                    </div> <!-- / star raying div -->
             
-                <b>Genre</b>:
-                <?php echo $find_rs['Genre'] ?>
+                    <div class="actual-rating">
+                        (<?php echo $find_rs['UserRating']; ?> based 
+                        on # ratings)
+                        
+                    </div> <!-- / text rating div -->
+                    
+                </div> <!-- / tatings flexbox -->
                 
-                <br />
+                <!--- /Ratings Area -->
                 
-                <b>Developer</b>:
-                <?php echo $find_rs['Developer'] ?>
+                <!-- Price -->
+                <?php
+                    
+                    if($find_rs['Price'] == 0) {
+                        ?>
+                    <p>Free!
+                       <?php
+                            if ($find_rs['In App'] == 1)
+                                {
+                                    ?>
+                                        (In App Purchase)
+                                    <?php
+                                } // end In App if
+                                
+                              
+                            ?>
+                    </p>
                 
-                <br />
-                <b>Rating</b>: <?php echo $find_rs['UserRating'] ?>
-                (based on <?php echo $find_rs['Rating Count'] ?> votes)
+                    <?php
+                    } // end price if
+                    
+                    else {
+                        
+                        ?>
+                    <b>Price:</b> $<?php echo $find_rs['Price']?>
+                    <?php
+                    } // end price else (dislplays cost)
+                ?>
                 
-            </p>
-            <hr />
-            <?php echo $find_rs['Description'] ?>
+                <!-- / Price -->
+
                 
             </div> <!-- / results -->
             
