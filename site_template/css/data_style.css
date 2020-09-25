@@ -170,6 +170,19 @@ a.side:hover {color:#083511; }
     display: block;
 }
 
+/* Side Form formatting */
+
+.searchform {
+    width: 250px;
+    margin:: 5px;
+}
+
+.search {
+    padding:8px 15px;
+    background:#fff;
+    border: 0px solid #dbdbdb;
+    width: 200px;
+}
 
 
 
